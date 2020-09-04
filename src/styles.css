@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+.tree-node {
+    background: #67C8FF;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tree-node-expanded {
+    border: 1px solid#67C8FF;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #0198E1;
+}
+
+.tree-node:hover {
+    background: #0198E1;
+    color: white
+}
+
+.tree-node-expanded:hover {
+    background: #0198E1;
+    color: white;
+}
+
+.toolbar-button {
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    color: grey;
+    margin-left: 5px;
+    padding: 1px 5px 1px 5px;
+    cursor: pointer;
+}
+
+.toolbar-button:hover {
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    background: #0198E1;
+    color: white;
+    margin-left: 5px;
+    padding: 1px 5px 1px 5px;
+}
+
+.toolbar-button-disabled {
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    color: lightgrey;
+    margin-left: 5px;
+    padding: 1px 5px 1px 5px;
+}
+
+.toolbar-page-text {
+    margin-left: 5px
+}
