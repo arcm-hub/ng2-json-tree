@@ -1,17 +1,15 @@
 # `ng2-json-tree` - XML/JSON Tree for Angular2
 
-# You might find this project helpful if
+## You might find this project helpful if
 - You want to render editable tree from XML / JSON. Primarily developed XML in mind.
 - You want to have basic skeleton to start with tree.
 
-# Main Features
+## Main Features
 - **Render JSON/XML** Renders JSON directly on UI. Use XML converter to render XML.
 - **Pagination** Supports pagination at each node level to avoid slowness on browserside.
 - **Events** Events triggered for tree rendering.
 - **Custom Toolbar Actions/Buttons** Supports custom actions/buttons at each node level to have custom actions.
 - **Customizable Styles** Supports custom CSS class names to brand according to your needs.
-
-# Let's start
 
 ## Installation
 
@@ -59,7 +57,7 @@ export class AppModule { }
 ### Step 2 - Rendering simple tree with an Angular Component
 
 
-TypeScript
+**TypeScript**
 ```ts
 import { Component, OnInit } from '@angular/core';
 
@@ -93,46 +91,46 @@ export class Example1Component implements OnInit {
 }
 ```
 
-HTML Template
+**HTML Template**
 ```html
 <ng2-json-tree [json]='json'></ng2-json-tree>
 ```
-Output:
-![Simple Tree](img/simple-tree.png)
+**Output:**
+![Simple Tree](https://github.com/arcm-hub/ng2-json-tree/blob/master/img/simple-tree.png?raw=true)
 
 
 ## Pagination
 
-Config:
+**Config:**
 ```json
   config = {
     pageSize: 2
   };
 ```
 
-HTML Template:
+**HTML Template:**
 ```html
 <ng2-json-tree [json]='json' [config]='config'></ng2-json-tree>
 ```
 
-Output:
-![Paginated Tree](img/paginated-tree.png)
+**Output:**
+![Paginated Tree](https://github.com/arcm-hub/ng2-json-tree/blob/master/img/paginated-tree.png?raw=true)
 
 
 ## Events
-HTML Template:
+**HTML Template:**
 ```html
 <ng2-json-tree [json]='json' [config]='config' (event)='onEvent($event)'></ng2-json-tree>
 ```
 
 ## Custom Toolbar Buttons
 
-HTML Template:
+**HTML Template:**
 ```html
 <ng2-json-tree [json]='json' [config]='config' (event)='onEvent($event)'></ng2-json-tree>
 ```
 
-Type Script Event Handling:
+**Type Script Event Handling:**
 ```ts
   onEvent(event: any) {
     var backgroundColor = 'white'
@@ -149,8 +147,9 @@ Type Script Event Handling:
   }
 ```
 
-Output:
-![Custom Buttons](img/custom-buttons.png)
+**Output:**
+![Custom Buttons](https://github.com/arcm-hub/ng2-json-tree/blob/master/img/custom-buttons.png?raw=true)
+
 
 ## Reference Links
 
