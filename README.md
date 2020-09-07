@@ -7,6 +7,7 @@
 # Main Features
 - **Render JSON/XML** Renders JSON directly on UI. Use XML converter to render XML.
 - **Pagination** Supports pagination at each node level to avoid slowness on browserside.
+- **Events** Events triggered for tree rendering.
 - **Custom Toolbar Actions/Buttons** Supports custom actions/buttons at each node level to have custom actions.
 - **Customizable Styles** Supports custom CSS class names to brand according to your needs.
 
@@ -147,7 +148,14 @@ Type Script Event Handling:
 
 Output:
 
-## Demo Project
+## Reference Links
 
-For a more complete worked example of how this module can be used, please see: 
-* Github repo: [tomwanzek/d3-ng2-demo](https://github.com/tomwanzek/d3-ng2-demo) and the related [_live_ Github page](https://tomwanzek.github.io/d3-ng2-demo/).
+* Demo Link: **TO BE UPDATED**
+* NPM Library: https://www.npmjs.com/package/ng2-json-tree
+* Git Repository for examples: https://github.com/arcm-hub/ng2-json-tree-example
+* Git for library source code: https://github.com/arcm-hub/ng2-json-tree
+* Feature request / Bugs: https://github.com/arcm-hub/ng2-json-tree/issues/new
+
+You are free to contribute to this open source git repository. 
+
+Thank You !!!
