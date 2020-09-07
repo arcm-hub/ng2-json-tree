@@ -11,6 +11,9 @@
 - **Custom Toolbar Actions/Buttons** Supports custom actions/buttons at each node level to have custom actions.
 - **Customizable Styles** Supports custom CSS class names to brand according to your needs.
 
+## Rendering XML
+Though this library does not support direct editing of XML, But still it works well with XML to JSON converted data. It is tested with https://www.npmjs.com/package/xml-js NPM node module. Convert your XML to JSON using xml-js NPM module and feed that to this library.
+
 ## Installation
 
 To include the package into your **Angular** project, simply use the standard npm package installation command:
@@ -95,11 +98,90 @@ export class Example1Component implements OnInit {
 ```html
 <ng2-json-tree [json]='json'></ng2-json-tree>
 ```
+
+### Step 3 - Add/Update default styles at styles.scss
+
+```css
+.ng2-json-tree-node {
+    background: #67C8FF;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ng2-json-tree-node-expanded {
+    border: 1px solid#67C8FF;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #0198E1;
+}
+
+.ng2-json-tree-node:hover {
+    background: #0198E1;
+    color: white
+}
+
+.ng2-json-tree-node-expanded:hover {
+    background: #0198E1;
+    color: white;
+}
+
+.ng2-json-tree-toolbar-button {
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    color: grey;
+    margin-left: 5px;
+    padding: 1px 5px 1px 5px;
+    cursor: pointer;
+}
+
+.ng2-json-tree-toolbar-button:hover {
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    background: #0198E1;
+    color: white;
+    margin-left: 5px;
+    padding: 1px 5px 1px 5px;
+}
+
+.ng2-json-tree-toolbar-button-disabled {
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    color: lightgrey;
+    margin-left: 5px;
+    padding: 1px 5px 1px 5px;
+}
+
+.ng2-json-tree-toolbar-page-text {
+    margin-left: 5px
+}
+
+.ng2-json-tree-child-area {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-left: 1px solid #67C8FF;
+}
+
+.ng2-json-tree-input-label {
+    width: 150px;
+}
+
+.ng2-json-tree-input {
+    width: 250px;
+}
+```
+
 **Output:**
 ![Simple Tree](https://github.com/arcm-hub/ng2-json-tree/blob/master/img/simple-tree.png?raw=true)
 
 
 ## Pagination
+
+Pass config object additionally with pageSize to show automatic pagination for all the tree nodes automatically.
 
 **Config:**
 ```json
@@ -118,6 +200,13 @@ export class Example1Component implements OnInit {
 
 
 ## Events
+
+Bind to event output emitter to listen to the events. This library currently emits following events as below.
+
+* **TREE_NODE_CREATED** - Raised when new tree node is created. This event can be used to get hold of d3 element of that node and use that to change styles and customize to add additional toolbar buttons, etc... Toolbar button creation is shown on example below.
+* **TEXT_INPUT_CREATED** - Raised when text input is created. Using this we can further customize input boxes using d3.
+* **TEXT_INPUT_CHANGED** - Raised when input is changed.
+
 **HTML Template:**
 ```html
 <ng2-json-tree [json]='json' [config]='config' (event)='onEvent($event)'></ng2-json-tree>
@@ -153,7 +242,7 @@ export class Example1Component implements OnInit {
 
 ## Reference Links
 
-* Demo Link: **TO BE UPDATED**
+* Demo Link: https://arcm-hub.github.io/ng2-json-tree-example/index.html
 * NPM Library: https://www.npmjs.com/package/ng2-json-tree
 * Git Repository for examples: https://github.com/arcm-hub/ng2-json-tree-example
 * Git for library source code: https://github.com/arcm-hub/ng2-json-tree
