@@ -98,6 +98,7 @@ HTML Template
 <ng2-json-tree [json]='json'></ng2-json-tree>
 ```
 Output:
+![Simple Tree](img/simple-tree.png)
 
 
 ## Pagination
@@ -115,6 +116,8 @@ HTML Template:
 ```
 
 Output:
+![Paginated Tree](img/paginated-tree.png)
+
 
 ## Events
 HTML Template:
@@ -147,6 +150,7 @@ Type Script Event Handling:
 ```
 
 Output:
+![Custom Buttons](img/custom-buttons.png)
 
 ## Reference Links
 
