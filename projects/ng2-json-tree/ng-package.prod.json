@@ -3,5 +3,8 @@
   "dest": "../../dist/ng2-json-tree",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "d3-ng2-service"
+  ]
 }
