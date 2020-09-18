@@ -130,7 +130,7 @@ export class Ng2JsonTreeComponent {
             var header = root.append('div')
                 .style("padding", '10px')
                 .style("margin-bottom", '-5px')
-                .attr("id", "_header");
+                .attr("id", key=>"_" + key + "_header");
             header.each(function(d, i) {
                 var header: any = d3.select(this);
                 if((Object.keys(model[d]).length == 1 && '_text' in model[d]) || Object.keys(model[d]).length <= 0) {
@@ -233,7 +233,7 @@ export class Ng2JsonTreeComponent {
                         header: header, 
                         toolbar: header.select("#_toolbar"),
                         d3ParentContainer: root,
-                        d3Container: d3.select(this),
+                        d3Container: root.filter(function(dx,i) { return d === dx; }),
                         parentModel: model,
                         model: d,
                         modelKey: d,

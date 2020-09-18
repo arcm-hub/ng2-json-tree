@@ -26,8 +26,8 @@ export class AppComponent {
       .text('highlight')
       .on('click', function(d, i) {
         backgroundColor = backgroundColor === 'white' ? 'lightyellow' : 'white';
-        // event.data.d3Container.style('background-color', backgroundColor);
-        event.data.d3Container.remove();
+        event.data.d3Container.style('background-color', backgroundColor);
+        // event.data.d3Container.remove();
         console.log("CLICKED", event);
       });
 
@@ -42,5 +42,6 @@ export class AppComponent {
       });
       
     }
+
   }
 }
