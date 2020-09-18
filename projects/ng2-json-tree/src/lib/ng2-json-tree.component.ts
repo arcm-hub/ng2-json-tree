@@ -111,6 +111,18 @@ export class Ng2JsonTreeComponent {
             root.each(function(d, i) {
                 const d3SubRoot = d3.select(this);
                 _this.renderSection(d3SubRoot, d);
+                let sectionToolbar = d3SubRoot.insert("span",":first-child").style('margin-left', '10px');
+                _this.raiseEvent('SECTION_TOOLBAR_CREATED', {
+                    d3ParentContainer: rootElement,
+                    d3Container: d3SubRoot,
+                    parentModel: model,
+                    modelKey: d,
+                    index: i,
+                    toolbar: sectionToolbar,
+                    model: model,
+                    level: level,
+                    d3
+                });
             })
         } else {
             root.style("margin-left", "10px");
@@ -118,7 +130,7 @@ export class Ng2JsonTreeComponent {
             var header = root.append('div')
                 .style("padding", '10px')
                 .style("margin-bottom", '-5px')
-                .attr("id", key=>"_" + key + "_header");
+                .attr("id", "_header");
             header.each(function(d, i) {
                 var header: any = d3.select(this);
                 if((Object.keys(model[d]).length == 1 && '_text' in model[d]) || Object.keys(model[d]).length <= 0) {
@@ -148,23 +160,26 @@ export class Ng2JsonTreeComponent {
                               })
                             model[d]['_text'] = e[0].value;
                         })
+                    
+                    let toolbar = header.append('div').style('display', 'inline-block').style('margin-left', '10px');
 
                     _this.raiseEvent('TEXT_INPUT_CREATED', {
-                      d3Element: header,
-                      d3Parent: root,
-                      parentModel: model,
-                      textInput: textInput,
-                      model: model[d],
-                      modelKey: d,
-                      level: level,
-                      d3
+                        d3Container: header,
+                        d3ParentContainer: root,
+                        parentModel: model,
+                        textInput: textInput,
+                        model: model[d],
+                        modelKey: d,
+                        level: level,
+                        toolbar: toolbar,
+                        d3
                     })
                 } else {
                     let headerTitle = header.append('span')
                                     .text(key=>key)
                                     .attr('class', 'ng2-json-tree-node');
 
-                    let toolbar = header.append('div').style('display', 'inline-block').style('margin-left', '10px');
+                    let toolbar = header.append('div').attr("id", "_toolbar").style('display', 'inline-block').style('margin-left', '10px');
                     
                     let currentPage = 1;
                     let tButtons = {
@@ -215,13 +230,15 @@ export class Ng2JsonTreeComponent {
                         }
                     });
                     _this.raiseEvent('TREE_NODE_CREATED', {
-                      header, toolbar,
-                      d3ParentContainer: root,
-                      parentModel: model,
-                      model: model[d],
-                      modelKey: d,
-                      level: level,
-                      d3
+                        header: header, 
+                        toolbar: header.select("#_toolbar"),
+                        d3ParentContainer: root,
+                        d3Container: d3.select(this),
+                        parentModel: model,
+                        model: d,
+                        modelKey: d,
+                        level: level,
+                        d3
                     })
                 }
             })

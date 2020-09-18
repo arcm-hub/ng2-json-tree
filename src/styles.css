@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-.tree-node {
+
+.ng2-json-tree-node {
     background: #67C8FF;
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.tree-node-expanded {
+.ng2-json-tree-node-expanded {
     border: 1px solid#67C8FF;
     padding: 5px;
     border-radius: 5px;
@@ -14,17 +15,17 @@
     color: #0198E1;
 }
 
-.tree-node:hover {
+.ng2-json-tree-node:hover {
     background: #0198E1;
     color: white
 }
 
-.tree-node-expanded:hover {
+.ng2-json-tree-node-expanded:hover {
     background: #0198E1;
     color: white;
 }
 
-.toolbar-button {
+.ng2-json-tree-toolbar-button {
     display: inline-block;
     border: 1px solid lightgrey;
     border-radius: 10px;
@@ -34,7 +35,7 @@
     cursor: pointer;
 }
 
-.toolbar-button:hover {
+.ng2-json-tree-toolbar-button:hover {
     display: inline-block;
     border: 1px solid lightgrey;
     border-radius: 10px;
@@ -44,7 +45,7 @@
     padding: 1px 5px 1px 5px;
 }
 
-.toolbar-button-disabled {
+.ng2-json-tree-toolbar-button-disabled {
     display: inline-block;
     border: 1px solid lightgrey;
     border-radius: 10px;
@@ -53,6 +54,20 @@
     padding: 1px 5px 1px 5px;
 }
 
-.toolbar-page-text {
+.ng2-json-tree-toolbar-page-text {
     margin-left: 5px
+}
+
+.ng2-json-tree-child-area {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-left: 1px solid #67C8FF;
+}
+
+.ng2-json-tree-input-label {
+    width: 150px;
+}
+
+.ng2-json-tree-input {
+    width: 250px;
 }
