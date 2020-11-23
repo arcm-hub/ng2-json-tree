@@ -133,7 +133,7 @@ export class Ng2JsonTreeComponent {
                 .attr("id", key=>"_" + key + "_header");
             header.each(function(d, i) {
                 var header: any = d3.select(this);
-                if((Object.keys(model[d]).length == 1 && '_text' in model[d]) || Object.keys(model[d]).length <= 0) {
+                if('_text' in model[d] || Object.keys(model[d]).length <= 0) {
                     header.append('div')
                         .text(key=>key)
                         .style("display", "inline-block")
