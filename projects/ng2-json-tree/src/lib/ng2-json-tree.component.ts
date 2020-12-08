@@ -74,7 +74,7 @@ export class Ng2JsonTreeComponent {
         var skipList = this.config.skipList ? this.config.skipList : ['_attributes'];
         var pageSize = this.config.pageSize ? this.config.pageSize : 0;
         var data = Array.isArray(model) ? model : Object.keys(model).filter(key => !skipList.includes(key));
-        var data = data.sort();
+        //var data = data.sort();
         var pagination = {
             total: data.length,
             pageSize: pageSize,    
